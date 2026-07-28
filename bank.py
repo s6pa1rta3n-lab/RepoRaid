@@ -71,7 +71,7 @@ class Account:
     
     def get_balance(self):
         # Returns the current balance of the account.
-        pass
+        return self.balance
 
     
     def get_transaction_history(self):
