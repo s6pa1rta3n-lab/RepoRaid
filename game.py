@@ -140,7 +140,7 @@ class SpaceGame:
     
     def black_hole(self):
         # display "A black hole is nearby! Will you attempt to study it or flee?"
-        pass
+        print("A black hole is nearby! Will you attempt to study it or flee?")
 
 if __name__ == "__main__":
     game = SpaceGame()
