@@ -20,7 +20,8 @@ class Bank:
     
     def list_accounts(self):
         # Lists all accounts with their details like account number, holder, balance
-        pass
+        for acc in self.accounts:
+            print(f"Account: {acc.account_number}, Holder: {acc.account_holder}, Balance: {acc.balance}")
 
 
     def close_account(self, account_number):
