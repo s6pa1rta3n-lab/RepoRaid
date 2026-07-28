@@ -125,7 +125,7 @@ class SpaceGame:
     
     def space_pirates(self):
         # display "Pirates attack your ship! Will you fight or escape?"
-        pass
+        print("Pirates attack your ship! Will you fight or escape?")
     
     def ancient_ruins(self):
         # display "You discovered ancient alien ruins with hidden technology!"
