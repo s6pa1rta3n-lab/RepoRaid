@@ -57,6 +57,7 @@ class Account:
         self.account_holder = account_holder
         self.balance = balance
         self.transactions = []
+        self.contact_information = {}
 
     
     def deposit(self, amount):
@@ -91,7 +92,7 @@ class Account:
     
     def update_contact_information(self, new_contact_info):
         # Updates the contact information of the account holder.
-        pass
+        self.contact_information.update(new_contact_info)
 
 
 class Transaction:
