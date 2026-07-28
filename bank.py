@@ -61,7 +61,11 @@ class Account:
     
     def deposit(self, amount):
         # Deposits a positive amount to the account and records the transaction. When adding transaction to array specift "Deposit" and amount
-        pass
+        if amount > 0:
+            self.balance += amount
+            self.transactions.append(("Deposit", amount))
+            return True
+        return False
 
     
     def withdraw(self, amount):
