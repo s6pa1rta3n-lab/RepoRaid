@@ -139,7 +139,7 @@ class BankEmployee:
     
     def suspend_account(self, account_number):
         # Return suspension message as string
-        pass
+        return f"Account {account_number} suspended."
 
     
     def generate_financial_report(self):
