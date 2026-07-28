@@ -134,7 +134,7 @@ class BankEmployee:
     
     def view_account_details(self, account_number):
         # Views account details given an account number by returning account number
-        pass
+        return account_number
 
     
     def suspend_account(self, account_number):
