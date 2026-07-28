@@ -86,7 +86,7 @@ class Account:
     
     def overdraft_protection(self, amount):
         # Checks if a withdrawal amount is within available balance.
-        pass
+        return amount <= self.balance
 
     
     def update_contact_information(self, new_contact_info):
