@@ -133,7 +133,7 @@ class SpaceGame:
     
     def lost_colony(self):
         # display "You find a lost human colony struggling to survive."
-        pass
+        print("You find a lost human colony struggling to survive.")
     
     def abandoned_ship(self):
         print("An abandoned spaceship drifts in the void. Do you explore it?")
