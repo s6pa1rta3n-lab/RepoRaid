@@ -47,7 +47,14 @@ class Bank:
     
     def process_loan_payments(self):
         # Processes loan payments by deducting the installment amount from the balance.
-        pass
+        for loan in self.loans:
+            if loan.remaining_balance > 0:
+                installment = min(loan.amount / loan.tenure, loan.remaining_balance)
+                account = next((a for a in self.accounts if a.account_number == loan.account_number), None)
+                if account and account.balance >= installment:
+                    account.balance -= installment
+                    loan.remaining_balance -= installment
+                    account.transactions.append(("Loan Payment", -installment))
 
 
 class Account:
