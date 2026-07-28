@@ -81,7 +81,12 @@ class Account:
     
     def apply_interest(self, rate):
         # Applies interest based on a given rate.
-        pass
+        if rate > 0:
+            interest = self.balance * rate
+            self.balance += interest
+            self.transactions.append(("Interest", interest))
+            return True
+        return False
 
     
     def overdraft_protection(self, amount):
