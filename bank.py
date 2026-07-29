@@ -76,7 +76,7 @@ class Account:
     
     def get_transaction_history(self):
         # Retrieves the transaction history of the account.
-        pass
+        return self.transactions
 
     
     def apply_interest(self, rate):
