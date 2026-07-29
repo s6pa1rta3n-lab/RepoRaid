@@ -1,3 +1,5 @@
+import random
+
 class Bank:
     
     def __init__(self, name):
@@ -10,7 +12,13 @@ class Bank:
     
     def create_account(self, account_holder, initial_balance):
         # Creates a new account with a unique number and initial balance, add it to accounts array and return account number
-        pass
+        account_number = str(random.randint(100000, 999999))
+        while any(a.account_number == account_number for a in self.accounts):
+            account_number = str(random.randint(100000, 999999))
+        
+        new_account = Account(account_number, account_holder, initial_balance)
+        self.accounts.append(new_account)
+        return account_number
 
     
     def get_account(self, account_number):
