@@ -15,7 +15,7 @@ class Bank:
     
     def get_account(self, account_number):
         # Retrieves an account by its number, returns None if not found.
-        pass
+        return next((a for a in self.accounts if a.account_number == account_number), None)
 
     
     def list_accounts(self):
