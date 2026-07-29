@@ -66,7 +66,11 @@ class Account:
     
     def withdraw(self, amount):
         # Withdraws an amount if sufficient balance is available. When adding into transactions array, specify Withdraw and amount
-        pass
+        if amount > 0 and amount <= self.balance:
+            self.balance -= amount
+            self.transactions.append(("Withdraw", amount))
+            return True
+        return False
 
     
     def get_balance(self):
