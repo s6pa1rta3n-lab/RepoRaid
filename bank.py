@@ -25,7 +25,11 @@ class Bank:
 
     def close_account(self, account_number):
         # Closes an account by removing it from the list.
-        pass
+        for i, acc in enumerate(self.accounts):
+            if acc.account_number == account_number:
+                del self.accounts[i]
+                return True
+        return False
 
 
     def transfer_funds(self, from_account, to_account, amount):
@@ -91,7 +95,7 @@ class Account:
     
     def update_contact_information(self, new_contact_info):
         # Updates the contact information of the account holder.
-        pass
+        self.contact_info = new_contact_info
 
 
 class Transaction:
