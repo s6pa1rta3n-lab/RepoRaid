@@ -28,10 +28,19 @@ class Bank:
         pass
 
 
-    def transfer_funds(self, from_account, to_account, amount):
+    def transfer_funds(self, from_account_num, to_account_num, amount):
         # Transfers funds between accounts if sufficient balance is available, return boolean values depending on
         # transfer success
-        pass
+        from_acc = next((a for a in self.accounts if a.account_number == from_account_num), None)
+        to_acc = next((a for a in self.accounts if a.account_number == to_account_num), None)
+        
+        if from_acc and to_acc and amount > 0 and from_acc.balance >= amount:
+            from_acc.balance -= amount
+            to_acc.balance += amount
+            from_acc.transactions.append(("Transfer Out", amount))
+            to_acc.transactions.append(("Transfer In", amount))
+            return True
+        return False
 
     
     def generate_account_statement(self, account_number):
