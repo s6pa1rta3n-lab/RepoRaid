@@ -42,7 +42,7 @@ class Bank:
     
     def calculate_total_assets(self):
         # Calculates the total assets by summing all account balances.
-        return sum(acc.balance for acc in self.accounts)
+        return sum(a.balance for a in self.accounts)
 
     
     def process_loan_payments(self):
