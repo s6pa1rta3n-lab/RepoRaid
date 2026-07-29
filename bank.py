@@ -36,7 +36,10 @@ class Bank:
     
     def generate_account_statement(self, account_number):
         # Generates a transaction history for a given account number, return None if no account number found
-        pass
+        account = next((a for a in self.accounts if a.account_number == account_number), None)
+        if account:
+            return account.transactions
+        return None
 
 
     
