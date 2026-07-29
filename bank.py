@@ -25,11 +25,7 @@ class Bank:
 
     def close_account(self, account_number):
         # Closes an account by removing it from the list.
-        for i, acc in enumerate(self.accounts):
-            if acc.account_number == account_number:
-                del self.accounts[i]
-                return True
-        return False
+        self.accounts = [a for a in self.accounts if a.account_number != account_number]
 
 
     def transfer_funds(self, from_account, to_account, amount):
